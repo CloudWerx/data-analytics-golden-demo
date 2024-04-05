@@ -56,7 +56,8 @@ gcp_account_name=$(gcloud auth list --filter=status:ACTIVE --format="value(accou
 
 
 # Get the Org Id (needed for org policies and creating the GCP project)
-org_id=$(gcloud organizations list --format="value(name)")
+#org_id=$(gcloud organizations list --format="value(name)")
+org_id=24313665334
 if [ -z "${org_id}" ]
 then
   echo "Org Id could not be automatically read."
@@ -77,7 +78,8 @@ else
 fi
 
 # Get the Billing Account (needed for creating the GCP project)
-billing_account=$(gcloud beta billing accounts list --format="value(ACCOUNT_ID)")
+#billing_account=$(gcloud beta billing accounts list --format="value(ACCOUNT_ID)")
+billing_account=01C7F4-B8A468-47300E
 if [ -z "${billing_account}" ]
 then
   echo "Billing Account could not be automatically read."
@@ -105,7 +107,8 @@ echo "*********************************************************"
 read -p "Press [Enter] key if all the above items are set (gcp_account_name, org_id, billing_account). If not press Ctrl+C ..."
 echo "*********************************************************"
 
-shared_demo_project_id="mySharedProject"
+#shared_demo_project_id="mySharedProject"
+shared_demo_project_id="cwx-da-cust-demo-shared"
 aws_omni_biglake_s3_bucket="myS3Bucket"
 azure_omni_biglake_adls_name="myAzureADLSGen2Account"
 

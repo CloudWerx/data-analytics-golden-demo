@@ -395,7 +395,7 @@ resource "random_string" "project_random" {
 
 locals {
   # The project is the provided name OR the name with a random suffix
-  local_project_id = var.project_number == "" ? "${var.project_id}-${random_string.project_random.result}" : var.project_id
+  local_project_id = var.project_id == "" ? "${var.project_id}-${random_string.project_random.result}" : var.project_id
 
   # Apply suffix to bucket so the name is unique
   local_storage_bucket = "${var.project_id}-${random_string.project_random.result}"
